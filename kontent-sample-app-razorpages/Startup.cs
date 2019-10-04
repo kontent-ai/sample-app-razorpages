@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using kontent_sample_app_razorpages.Resolvers;
 using Kentico.Kontent.Delivery;
-using Kentico.Kontent.Delivery.InlineContentItems;
 using KenticoKontentModels;
 
 namespace kontent_sample_app_razorpages
