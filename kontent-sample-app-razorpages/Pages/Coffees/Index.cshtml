@@ -1,16 +1,28 @@
 ﻿@page
 @model kontent_sample_app_razorpages.Pages.Coffees.IndexModel
+@using KenticoKontentModels
 @{
-    Layout = null;
+    ViewData["Title"] = "Coffees";
+    var i = 1;
 }
 
-<!DOCTYPE html>
+@foreach (Coffee coffee in Model.Coffee.Items)
+{
+    <div class="col-lg-3 col-md-6 col-sm-12">
+        <figure class="product-tile-image">
+            <a asp-page="/Coffees/Detail" asp-route-UrlPattern="@coffee.UrlPattern">
+                <img src="@Html.DisplayFor(modelItem => coffee.Image.First().Url)" />
+            </a>
+        </figure>
+        <div class="article-tile-date">
+            @Html.DisplayFor(modelItem => coffee.ProductName) - $@Html.DisplayFor(model => coffee.Price)
+        </div>
+    </div>
+    @if (i % 4 == 0)
+    {
+        <div class="clear"></div>
+    }
+    i++;
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-</body>
-</html>
+
