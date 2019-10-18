@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/vedh8jlja0ip79vw?svg=true)](https://ci.appveyor.com/project/kentico-michaelb/kontent-sample-app-razorpages)
+
 # kontent-sample-app-razorpages
 Sample .Net Core Razor Pages project using the [Kentico Kontent Delivery .NET SDK](https://github.com/Kentico/kontent-delivery-sdk-net) to retrieve content.
 
