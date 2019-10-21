@@ -14,7 +14,8 @@ namespace KenticoKontentModels
             {typeof(HeroUnit), "hero_unit"},
             {typeof(Home), "home"},
             {typeof(HostedVideo), "hosted_video"},
-            {typeof(Tweet), "tweet"}
+            {typeof(Tweet), "tweet"},
+            {typeof(Coffee), "coffee"}
         };
 
         public Type GetType(string contentType)
