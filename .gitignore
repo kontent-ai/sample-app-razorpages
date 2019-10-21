@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Added by MichaelB
+kontent-sample-app-razorpages/appsettings.json
+*appsettings.json
+
 # User-specific files
 *.rsuser
 *.suo
