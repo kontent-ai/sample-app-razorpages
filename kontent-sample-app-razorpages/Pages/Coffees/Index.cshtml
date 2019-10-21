@@ -13,10 +13,11 @@
             <a asp-page="/Coffees/Detail" asp-route-UrlPattern="@coffee.UrlPattern">
                 <img src="@Html.DisplayFor(modelItem => coffee.Image.First().Url)" />
             </a>
+            <div class="article-tile-date">
+                @Html.DisplayFor(model => coffee.ProductName) $@Html.DisplayFor(model => coffee.Price)
+            </div>
         </figure>
-        <div class="article-tile-date">
-            @Html.DisplayFor(modelItem => coffee.ProductName) - $@Html.DisplayFor(model => coffee.Price)
-        </div>
+
     </div>
     @if (i % 4 == 0)
     {
