@@ -7,25 +7,26 @@
 <h2>Our Cafes</h2>
 <div class="row">
     @foreach (var cafe in Model.CompanyCafes)
-    {
-        var photo = cafe.Photo.FirstOrDefault();
-        <div class="col-md-6">
-            <div class="cafe-tile cursor-hand js-scroll-to-map" data-address="@cafe.City, @cafe.Street">
+    {        
+        @await Html.PartialAsync("Cafe", cafe, new ViewDataDictionary(this.ViewData) { { "ShowImage", true } });
+        @*var photo = cafe.Photo.FirstOrDefault();
+            <div class="col-md-6">
+                <div class="cafe-tile cursor-hand js-scroll-to-map" data-address="@cafe.City, @cafe.Street">
 
-                <div class="cafe-image-tile-image-wrapper" style="background-image:url('@(photo != null ? photo.Url: "")'); background-size: cover; background-position: right center;"></div>
+                    <div class="cafe-image-tile-image-wrapper" style="background-image:url('@(photo != null ? photo.Url: "")'); background-size: cover; background-position: right center;"></div>
 
 
-                <div class="cafe-tile-content">
-                    <h3 class="cafe-tile-name">@Html.DisplayFor(vm => cafe.System.Name)</h3>
-                    <address class="cafe-tile-address">
-                        <a href="javascript:void(0)" class="cafe-tile-address-anchor">@Html.DisplayFor(vm => cafe.Street), @Html.DisplayFor(vm => cafe.City)<br />@Html.DisplayFor(vm => cafe.ZipCode), @Html.DisplayFor(vm => cafe.Country), @Html.DisplayFor(vm => cafe.State)</a>
-                    </address>
-                    <p class="cafe-tile-phone">
-                        @await Html.PartialAsync("PhoneNumber", cafe.Phone);
-                    </p>
+                    <div class="cafe-tile-content">
+                        <h3 class="cafe-tile-name">@Html.DisplayFor(vm => cafe.System.Name)</h3>
+                        <address class="cafe-tile-address">
+                            <a href="javascript:void(0)" class="cafe-tile-address-anchor">@Html.DisplayFor(vm => cafe.Street), @Html.DisplayFor(vm => cafe.City)<br />@Html.DisplayFor(vm => cafe.ZipCode), @Html.DisplayFor(vm => cafe.Country), @Html.DisplayFor(vm => cafe.State)</a>
+                        </address>
+                        <p class="cafe-tile-phone">
+                            @await Html.PartialAsync("PhoneNumber", cafe.Phone);
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div>*@
     }
 </div>
 <h2>Other places where you can drink our coffee</h2>
