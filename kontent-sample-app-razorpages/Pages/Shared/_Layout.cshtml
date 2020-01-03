@@ -23,6 +23,18 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-page="/Coffees/Index">Coffees</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/About/About">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/Cafes/Index">Cafes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/Contacts/Index">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-page="/Partnership/Index">Partnership</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -66,5 +78,8 @@
             </div>
         </footer>
     </div>
+    <script src="@Url.Content("/Scripts/jquery-3.1.1.js")"></script>
+    <script src="@Url.Content("/Scripts/jquey.validate.js")"></script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>
