@@ -1,6 +1,5 @@
-﻿using Kentico.Kontent.Delivery.InlineContentItems;
-using KenticoKontentModels;
-using System.Linq;
+﻿using Kentico.Kontent.Delivery.Abstractions.InlineContentItems;
+using kontent_sample_app_razorpages.Models;
 
 namespace kontent_sample_app_razorpages.Resolvers
 {

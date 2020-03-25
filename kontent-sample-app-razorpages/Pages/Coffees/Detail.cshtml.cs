@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Kentico.Kontent.Delivery;
-using KenticoKontentModels;
+using Kentico.Kontent.Delivery.Abstractions;
+using kontent_sample_app_razorpages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,14 +9,14 @@ namespace kontent_sample_app_razorpages.Pages.Coffees
 {
     public class DetailModel : PageModel
     {
-        private IDeliveryClient _deliveryClient;
+        private readonly IDeliveryClient _deliveryClient;
+
+        public Coffee Coffee { get; set; }
 
         public DetailModel(IDeliveryClient deliveryClient)
         {
             _deliveryClient = deliveryClient;
         }
-
-        public Coffee Coffee { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string UrlPattern)
         {
@@ -23,9 +24,7 @@ namespace kontent_sample_app_razorpages.Pages.Coffees
 
             try
             {
-                var response = await _deliveryClient.GetItemsAsync<Coffee>(
-                new EqualsFilter(UrlPatternCodename, UrlPattern)
-                );
+                var response = await _deliveryClient.GetItemsAsync<Coffee>(new EqualsFilter(UrlPatternCodename, UrlPattern));
 
                 Coffee = response.Items[0];
 
@@ -35,7 +34,6 @@ namespace kontent_sample_app_razorpages.Pages.Coffees
             {
                 return Redirect("/Error");
             }
-
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Kentico.Kontent.Delivery;
+﻿using Kentico.Kontent.Delivery.Abstractions;
 
 namespace kontent_sample_app_razorpages.Resolvers
 {
@@ -7,16 +7,12 @@ namespace kontent_sample_app_razorpages.Resolvers
         public string ResolveLinkUrl(ContentLink link)
         {
             // Resolves URLs to content items based on the 'accessory' content type
-            switch (link.ContentTypeCodename)
+            return link.ContentTypeCodename switch
             {
-                case "article":
-                    return $"/Articles/Detail/{link.UrlSlug}";
-                case "coffee":
-                    return $"/Coffees/Detail/{link.UrlSlug}";
-                default:
-                    return "/404";
-
-            }            
+                "article" => $"/Articles/Detail/{link.UrlSlug}",
+                "coffee" => $"/Coffees/Detail/{link.UrlSlug}",
+                _ => "/404",
+            };
         }
 
         public string ResolveBrokenLinkUrl()

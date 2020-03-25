@@ -9,7 +9,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Kentico.Kontent.Delivery" Version="12.3.0" />
+    <PackageReference Include="Kentico.Kontent.Delivery" Version="13.0.1-beta9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 

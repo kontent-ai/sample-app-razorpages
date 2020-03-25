@@ -1,21 +1,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Kentico.Kontent.Delivery;
+using Kentico.Kontent.Delivery.Abstractions;
 
-namespace KenticoKontentModels
+namespace kontent_sample_app_razorpages.Models
 {
     public class CustomTypeProvider : ITypeProvider
     {
         private static readonly Dictionary<Type, string> _codenames = new Dictionary<Type, string>
         {
-           
-            {typeof(Article), "article"},   
+            {typeof(AboutUs), "about_us"},
+            {typeof(Article), "article"},
+            {typeof(Cafe), "cafe"},
+            {typeof(Coffee), "coffee"},
+            {typeof(FactAboutUs), "fact_about_us"},
             {typeof(HeroUnit), "hero_unit"},
             {typeof(Home), "home"},
             {typeof(HostedVideo), "hosted_video"},
-            {typeof(Tweet), "tweet"},
-            {typeof(Coffee), "coffee"}
+            {typeof(Tweet), "tweet"}
         };
 
         public Type GetType(string contentType)

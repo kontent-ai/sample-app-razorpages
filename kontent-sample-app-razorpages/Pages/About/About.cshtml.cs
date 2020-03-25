@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Kentico.Kontent.Delivery;
+﻿using System.Threading.Tasks;
+using Kentico.Kontent.Delivery.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,18 +7,18 @@ namespace kontent_sample_app_razorpages
 {
     public class AboutModel : PageModel
     {
-        private IDeliveryClient _deliveryClient;
+        private readonly IDeliveryClient _deliveryClient;
+
+        public DeliveryItemResponse<kontent_sample_app_razorpages.Models.AboutUs> AboutUs { get; set; }
 
         public AboutModel(IDeliveryClient deliveryClient)
         {
             _deliveryClient = deliveryClient;
         }
 
-        public DeliveryItemResponse<KenticoKontentModels.AboutUs> AboutUs { get; set; }
-
         public async Task<IActionResult> OnGetAsync()
         {
-            AboutUs = await _deliveryClient.GetItemAsync<KenticoKontentModels.AboutUs>("about_us");
+            AboutUs = await _deliveryClient.GetItemAsync<kontent_sample_app_razorpages.Models.AboutUs>("about_us");
 
             return Page();
         }

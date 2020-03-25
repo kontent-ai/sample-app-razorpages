@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Kentico.Kontent.Delivery;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace kontent_sample_app_razorpages.Pages.Partnership
@@ -17,8 +12,7 @@ namespace kontent_sample_app_razorpages.Pages.Partnership
 
         /// <summary>
         /// Dummy action.
-        /// </summary>
-        
+        /// </summary>        
         public IActionResult OnPost()
         {
             // If needed, put your code here to work with the uploaded data in MVC.

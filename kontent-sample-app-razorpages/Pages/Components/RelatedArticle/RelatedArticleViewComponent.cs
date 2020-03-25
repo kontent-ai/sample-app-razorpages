@@ -1,10 +1,5 @@
-﻿using Kentico.Kontent.Delivery;
-using Microsoft.AspNetCore.Mvc;
-using KenticoKontentModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using kontent_sample_app_razorpages.Models;
 
 namespace kontent_sample_app_razorpages.Pages.Components.RelatedArticle
 {
