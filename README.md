@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/7irge9no1pk1wytc/branch/master?svg=true)](https://ci.appveyor.com/project/kentico/kontent-sample-app-razorpages/branch/master)
 
-# kontent-sample-app-razorpages
+# Kentico Kontent sample ASP.NET Core Razor Pages web application
 Sample .NET Core Razor Pages project using the [Kentico Kontent Delivery .NET SDK](https://github.com/Kentico/kontent-delivery-sdk-net) to retrieve content.
 
 This application is meant for use with the Dancing Goat sample project within Kentico Kontent. The project contains the home page and article content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any administrator of a Kentico Kontent subscription [can generate one](https://app.kontent.ai/sample-project-generator).
