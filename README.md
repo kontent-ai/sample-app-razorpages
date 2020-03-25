@@ -1,7 +1,7 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/vedh8jlja0ip79vw?svg=true)](https://ci.appveyor.com/project/kentico-michaelb/kontent-sample-app-razorpages)
+[![Build status](https://ci.appveyor.com/api/projects/status/7irge9no1pk1wytc/branch/master?svg=true)](https://ci.appveyor.com/project/kentico/kontent-sample-app-razorpages/branch/master)
 
 # kontent-sample-app-razorpages
-Sample .Net Core Razor Pages project using the [Kentico Kontent Delivery .NET SDK](https://github.com/Kentico/kontent-delivery-sdk-net) to retrieve content.
+Sample .NET Core Razor Pages project using the [Kentico Kontent Delivery .NET SDK](https://github.com/Kentico/kontent-delivery-sdk-net) to retrieve content.
 
 This application is meant for use with the Dancing Goat sample project within Kentico Kontent. The project contains the home page and article content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any administrator of a Kentico Kontent subscription [can generate one](https://app.kontent.ai/sample-project-generator).
 
@@ -30,7 +30,6 @@ If you already have a [Kentico Kontent account](https://app.kontent.ai), you can
     "DeliveryOptions": {
       "ProjectId": "<your Kontent project ID>"
     },
-
   }
 ```
 1. Save the changes.
@@ -45,3 +44,5 @@ You can learn more about content editing with Kentico Kontent in our [Documentat
 
 ## Content delivery
 You can retrieve content either through the [Kentico Kontent Delivery SDK](https://github.com/Kentico/kontent-delivery-sdk-net) or the [Kentico Kotent Delivery API](https://docs.kontent.ai/reference/kentico-kontent-apis-overview).
+
+![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-sample-app-razorpages?pixel)
