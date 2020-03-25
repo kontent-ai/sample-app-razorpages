@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using kontent_sample_app_razorpages.Resolvers;
-using Kentico.Kontent.Delivery;
-using KenticoKontentModels;
+using kontent_sample_app_razorpages.Models;
+using Kentico.Kontent.Delivery.Abstractions;
 
 namespace kontent_sample_app_razorpages
 {
@@ -26,17 +26,17 @@ namespace kontent_sample_app_razorpages
                 .AddDeliveryInlineContentItemsResolver<Tweet, TweetResolver>()
                 .AddDeliveryInlineContentItemsResolver<HostedVideo, HostedVideoResolver>()
                 .AddSingleton<ITypeProvider, CustomTypeProvider>()
-                .AddDeliveryClient(Configuration)                            
-                .AddMvc()
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                    .AddRazorPagesOptions(options =>
+                .AddDeliveryClient(Configuration);                            
+                
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options =>
                 {
                     options.Conventions.AddPageRoute("/Home/Index", "");
                 });
-        }
+    }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -49,7 +49,12 @@ namespace kontent_sample_app_razorpages
 
             app.UseStaticFiles();
 
-            app.UseMvc();
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+            });
         }
     }
 }
