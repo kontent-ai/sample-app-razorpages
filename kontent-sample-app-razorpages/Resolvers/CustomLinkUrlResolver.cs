@@ -1,24 +1,25 @@
 ﻿using Kentico.Kontent.Delivery.Abstractions;
+using System.Threading.Tasks;
 
 namespace kontent_sample_app_razorpages.Resolvers
 {
     public class CustomContentLinkUrlResolver : IContentLinkUrlResolver
     {
-        public string ResolveLinkUrl(ContentLink link)
+        public async Task<string> ResolveLinkUrlAsync(IContentLink link)
         {
             // Resolves URLs to content items based on the 'accessory' content type
-            return link.ContentTypeCodename switch
+            return await Task.FromResult(link.ContentTypeCodename switch
             {
-                "article" => $"/Articles/Detail/{link.UrlSlug}",
-                "coffee" => $"/Coffees/Detail/{link.UrlSlug}",
+                "article" =>  $"/Articles/Detail/{link.UrlSlug}",
+                "coffee" =>  $"/Coffees/Detail/{link.UrlSlug}",
                 _ => "/404",
-            };
+            });
         }
 
-        public string ResolveBrokenLinkUrl()
+        public Task<string> ResolveBrokenLinkUrlAsync()
         {
             // Resolves URLs to unavailable content items
-            return "/404";
+            return Task.FromResult("/404");
         }
     }
 }

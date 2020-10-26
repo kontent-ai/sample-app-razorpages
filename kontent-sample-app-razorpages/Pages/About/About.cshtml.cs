@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Kentico.Kontent.Delivery.Abstractions;
+using kontent_sample_app_razorpages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -9,7 +10,7 @@ namespace kontent_sample_app_razorpages
     {
         private readonly IDeliveryClient _deliveryClient;
 
-        public DeliveryItemResponse<kontent_sample_app_razorpages.Models.AboutUs> AboutUs { get; set; }
+        public IDeliveryItemResponse<AboutUs> AboutUs { get; set; }
 
         public AboutModel(IDeliveryClient deliveryClient)
         {
@@ -18,7 +19,7 @@ namespace kontent_sample_app_razorpages
 
         public async Task<IActionResult> OnGetAsync()
         {
-            AboutUs = await _deliveryClient.GetItemAsync<kontent_sample_app_razorpages.Models.AboutUs>("about_us");
+            AboutUs = await _deliveryClient.GetItemAsync<AboutUs>("about_us");
 
             return Page();
         }

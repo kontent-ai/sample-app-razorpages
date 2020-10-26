@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Kentico.Kontent.Delivery;
 using Kentico.Kontent.Delivery.Abstractions;
+using Kentico.Kontent.Delivery.Urls.QueryParameters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,7 +10,7 @@ namespace kontent_sample_app_razorpages.Pages
     {
         private readonly IDeliveryClient _deliveryClient;
 
-        public DeliveryItemResponse<kontent_sample_app_razorpages.Models.Home> Home { get; set; }
+        public IDeliveryItemResponse<Models.Home> Home { get; set; }
 
         public IndexModel(IDeliveryClient deliveryClient)
         {
@@ -19,8 +19,8 @@ namespace kontent_sample_app_razorpages.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
-            Home = await _deliveryClient.GetItemAsync<kontent_sample_app_razorpages.Models.Home>(
-                kontent_sample_app_razorpages.Models.Home.Codename,
+            Home = await _deliveryClient.GetItemAsync<Models.Home>(
+                Models.Home.Codename,
                 new DepthParameter(3)
                 );
 

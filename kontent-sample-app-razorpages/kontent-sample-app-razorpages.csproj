@@ -5,11 +5,12 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>kontent_sample_app_razorpages</RootNamespace>
     <AssemblyName>kontent-sample-app-razorpages</AssemblyName>
+    <UserSecretsId>fdbd2a40-72c9-4f17-9a13-bffb343ae2ea</UserSecretsId>
   </PropertyGroup>
 
 
   <ItemGroup>
-    <PackageReference Include="Kentico.Kontent.Delivery" Version="13.0.1-beta9" />
+    <PackageReference Include="Kentico.Kontent.Delivery" Version="14.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 

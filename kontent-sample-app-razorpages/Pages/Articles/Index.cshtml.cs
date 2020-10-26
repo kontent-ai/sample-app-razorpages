@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using kontent_sample_app_razorpages.Models;
-using Kentico.Kontent.Delivery;
 using Microsoft.AspNetCore.Mvc;
 using Kentico.Kontent.Delivery.Abstractions;
+using Kentico.Kontent.Delivery.Urls.QueryParameters;
 
 namespace kontent_sample_app_razorpages.Pages.Articles
 {
@@ -11,7 +11,7 @@ namespace kontent_sample_app_razorpages.Pages.Articles
     {
         private readonly IDeliveryClient _deliveryClient;
 
-        public DeliveryItemListingResponse<Article> Articles { get; set; }
+        public IDeliveryItemListingResponse<Article> Articles { get; set; }
 
         public IndexModel(IDeliveryClient deliveryClient)
         {
