@@ -5,6 +5,7 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <RootNamespace>kontent_sample_app_razorpages</RootNamespace>
     <AssemblyName>kontent-sample-app-razorpages</AssemblyName>
+    <UserSecretsId>fdbd2a40-72c9-4f17-9a13-bffb343ae2ea</UserSecretsId>
   </PropertyGroup>
 
 
