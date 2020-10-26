@@ -10,13 +10,17 @@ namespace kontent_sample_app_razorpages.Models
         private static readonly Dictionary<Type, string> _codenames = new Dictionary<Type, string>
         {
             {typeof(AboutUs), "about_us"},
+            {typeof(Accessory), "accessory"},
             {typeof(Article), "article"},
+            {typeof(Brewer), "brewer"},
             {typeof(Cafe), "cafe"},
             {typeof(Coffee), "coffee"},
             {typeof(FactAboutUs), "fact_about_us"},
+            {typeof(Grinder), "grinder"},
             {typeof(HeroUnit), "hero_unit"},
             {typeof(Home), "home"},
             {typeof(HostedVideo), "hosted_video"},
+            {typeof(Office), "office"},
             {typeof(Tweet), "tweet"}
         };
 

@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Kentico.Kontent.Delivery;
 using Kentico.Kontent.Delivery.Abstractions;
+using Kentico.Kontent.Delivery.Urls.QueryParameters;
 using kontent_sample_app_razorpages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -11,7 +11,7 @@ namespace kontent_sample_app_razorpages.Pages.Coffees
     {
         private readonly IDeliveryClient _deliveryClient;
 
-        public DeliveryItemListingResponse<Coffee> Coffee { get; set; }
+        public IDeliveryItemListingResponse<Coffee> Coffee { get; set; }
 
         public IndexModel(IDeliveryClient deliveryClient)
         {

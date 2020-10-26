@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Kentico.Kontent.Delivery;
 using Kentico.Kontent.Delivery.Abstractions;
+using Kentico.Kontent.Delivery.Urls.QueryParameters;
 using kontent_sample_app_razorpages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,7 +13,7 @@ namespace kontent_sample_app_razorpages.Pages.Cafes
     {
         private readonly IDeliveryClient _deliveryClient;
 
-        public DeliveryItemResponse<Models.Home> Home { get; set; }
+        public IDeliveryItemResponse<Models.Home> Home { get; set; }
 
         public List<Cafe> CompanyCafes { get; set; }
 

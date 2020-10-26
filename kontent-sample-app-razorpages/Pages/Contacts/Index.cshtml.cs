@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Kentico.Kontent.Delivery;
 using Kentico.Kontent.Delivery.Abstractions;
+using Kentico.Kontent.Delivery.Urls.QueryParameters.Filters;
 using kontent_sample_app_razorpages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -15,7 +15,7 @@ namespace kontent_sample_app_razorpages.Pages.Contacts
 
         public Cafe Roastery { get; set; }
 
-        public IReadOnlyList<Cafe> Cafes { get; set; }
+        public IList<Cafe> Cafes { get; set; }
 
         public IndexModel(IDeliveryClient deliveryClient)
         {
