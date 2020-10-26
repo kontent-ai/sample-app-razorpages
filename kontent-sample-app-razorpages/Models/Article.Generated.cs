@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Kentico.Kontent.Delivery.Abstractions;
 
 namespace kontent_sample_app_razorpages.Models
@@ -49,6 +50,7 @@ namespace kontent_sample_app_razorpages.Models
         public string MetaDescription { get; set; }
         public string MetaKeywords { get; set; }
         public IEnumerable<ITaxonomyTerm> Personas { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MMM. dd, yyyy}")]
         public DateTime? PostDate { get; set; }
         public IEnumerable<object> RelatedArticles { get; set; }
         public IEnumerable<ITaxonomyTerm> Sitemap { get; set; }
