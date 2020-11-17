@@ -36,6 +36,8 @@ namespace kontent_sample_app_razorpages.Models
         public const string UrlPatternCodename = "url_pattern";
 
         public IRichTextContent BodyCopy { get; set; }
+        public string MetaDescription { get; set; }
+        public string MetaKeywords { get; set; }
         public string MetadataMetaDescription { get; set; }
         public string MetadataMetaTitle { get; set; }
         public string MetadataOgDescription { get; set; }
@@ -46,8 +48,6 @@ namespace kontent_sample_app_razorpages.Models
         public IEnumerable<IAsset> MetadataTwitterImage { get; set; }
         public string MetadataTwitterSite { get; set; }
         public string MetadataTwitterTitle { get; set; }
-        public string MetaDescription { get; set; }
-        public string MetaKeywords { get; set; }
         public IEnumerable<ITaxonomyTerm> Personas { get; set; }
         public DateTime? PostDate { get; set; }
         public IEnumerable<object> RelatedArticles { get; set; }
