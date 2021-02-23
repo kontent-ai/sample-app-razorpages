@@ -44,5 +44,3 @@ You can learn more about content editing with Kentico Kontent in our [Documentat
 
 ## Content delivery
 You can retrieve content either through the [Kentico Kontent Delivery SDK](https://github.com/Kentico/kontent-delivery-sdk-net) or the [Kentico Kotent Delivery API](https://docs.kontent.ai/reference/kentico-kontent-apis-overview).
-
-![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-sample-app-razorpages?pixel)
