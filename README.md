@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/7irge9no1pk1wytc/branch/master?svg=true)](https://ci.appveyor.com/project/kentico/kontent-sample-app-razorpages/branch/master)
+[![Build & Test](https://github.com/Kentico/kontent-sample-app-razorpages/actions/workflows/integrate.yml/badge.svg)](https://github.com/Kentico/kontent-sample-app-razorpages/actions/workflows/integrate.yml)
 
 # Kentico Kontent sample ASP.NET Core Razor Pages web application
 Sample .NET Core Razor Pages project using the [Kentico Kontent Delivery .NET SDK](https://github.com/Kentico/kontent-delivery-sdk-net) to retrieve content.
