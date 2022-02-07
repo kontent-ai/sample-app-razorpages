@@ -1,6 +1,7 @@
 [![Build & Test](https://github.com/Kentico/kontent-sample-app-razorpages/actions/workflows/integrate.yml/badge.svg)](https://github.com/Kentico/kontent-sample-app-razorpages/actions/workflows/integrate.yml)
 
 # Kentico Kontent sample ASP.NET Core Razor Pages web application
+
 Sample .NET Core Razor Pages project using the [Kentico Kontent Delivery .NET SDK](https://github.com/Kentico/kontent-delivery-sdk-net) to retrieve content.
 
 This application is meant for use with the Dancing Goat sample project within Kentico Kontent. The project contains the home page and article content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any administrator of a Kentico Kontent subscription [can generate one](https://app.kontent.ai/sample-project-generator).
@@ -8,7 +9,9 @@ This application is meant for use with the Dancing Goat sample project within Ke
 ## Application setup
 
 ### Running the application
+
 To run the app:
+
 1. Clone the app repository with your favorite GIT client
    1. For instance, you can use [Visual Studio](https://www.visualstudio.com/vs/), [Visual Studio Code](https://code.visualstudio.com/), [GitHub Desktop](https://desktop.github.com/), etc.
    1. Alternatively, you can download the repo as a ZIP file, however, this will not adapt line endings in downloaded files to your platform (Windows, Unix).
@@ -16,6 +19,7 @@ To run the app:
 1. Run the app.
 
 ### Connecting to your sample project
+
 If you already have a [Kentico Kontent account](https://app.kontent.ai), you can connect this sample Razor Pages application to your version of the Sample project.
 
 1. In Kentico Kontent, choose Project settings from the app menu.
@@ -36,11 +40,13 @@ If you already have a [Kentico Kontent account](https://app.kontent.ai), you can
 1. Run the application.
 
 ## Content administration
+
 1. Navigate to <https://app.kontent.ai> in your browser.
 1. Sign in with your credentials.
 1. Manage content in the content administration interface of your sample project.
 
-You can learn more about content editing with Kentico Kontent in our [Documentation](https://docs.kontent.ai/).
+Learn more about [content editing with Kontent](https://kontent.ai/learn/tutorials/write-and-collaborate/create-content/introducing-content-items).
 
 ## Content delivery
-You can retrieve content either through the [Kentico Kontent Delivery SDK](https://github.com/Kentico/kontent-delivery-sdk-net) or the [Kentico Kotent Delivery API](https://docs.kontent.ai/reference/kentico-kontent-apis-overview).
+
+You can retrieve content either through the [Kentico Kontent Delivery SDK](https://github.com/Kentico/kontent-delivery-sdk-net) or the [Kentico Kotent Delivery API](https://kontent.ai/learn/reference/kontent-apis-overview).
