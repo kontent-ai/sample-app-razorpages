@@ -1,0 +1,32 @@
+﻿@page
+@model sample_app_razorpages.Pages.Cafes.IndexModel
+@{
+    ViewData["Title"] = "Cafes - Dancing Goat";
+}
+
+<h2>Our Cafes</h2>
+<div class="row">
+    @foreach (var cafe in Model.CompanyCafes)
+    {        
+        @await Html.PartialAsync("Cafe", cafe, new ViewDataDictionary(this.ViewData) { { "ShowImage", true } });        
+    }
+</div>
+<h2>Other places where you can drink our coffee</h2>
+<div class="row">
+    @foreach (var cafe in Model.PartnerCafes)
+    {
+        <h3>@Html.DisplayFor(vm => cafe.City), @Html.DisplayFor(vm => cafe.Country)</h3>
+        <p>
+            @Html.DisplayFor(vm => cafe.System.Name), @Html.DisplayFor(vm => cafe.Street), @await Html.PartialAsync("PhoneNumber", cafe.Phone);
+        </p>
+    }
+</div>
+
+<h2 class="map-title">Find the nearest cafe</h2>
+<div class="map js-map"></div>
+
+@section Scripts {
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVOq4C-rf7JVeHt6ws9vsf-KHIRpueASg"></script>
+    <script src="@Url.Content("/Scripts/map.js")"></script>       
+}
+

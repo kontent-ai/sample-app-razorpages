@@ -1,0 +1,39 @@
+﻿@page
+@model sample_app_razorpages.Pages.Contacts.IndexModel
+@{
+    ViewData["Title"] = "Contact - Dancing Goat";
+}
+
+@if (Model.Roastery != null)
+{
+    <div class="col-md-12">
+        <h2 class="contact-title">Roastery</h2>
+        <ul class="contact-info">
+            <li>@await Html.PartialAsync("PhoneNumber", Model.Roastery.Phone);</li>
+            <li>@Html.DisplayFor(vm => vm.Roastery.Email)</li>
+            <li>
+                <a href="javascript:void(0)" data-address="@Model.Roastery.City, @Model.Roastery.Street" class="js-scroll-to-map">
+                    @Html.DisplayFor(vm => vm.Roastery.Street), @Html.DisplayFor(vm => vm.Roastery.City)<br />
+                    @Html.DisplayFor(vm => vm.Roastery.ZipCode), @Html.DisplayFor(vm => vm.Roastery.Country), @Html.DisplayFor(vm => vm.Roastery.State)<br />
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
+<h2>Our Cafes</h2>
+<div class="row">
+    @foreach (var cafe in Model.Cafes)
+    {
+        @await Html.PartialAsync("Cafe", cafe);
+    }
+</div>
+
+<h2 class="map-title">Drop in</h2>
+<div class="map js-map"></div>
+
+@section Scripts {
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVOq4C-rf7JVeHt6ws9vsf-KHIRpueASg"></script>
+    <script src="@Url.Content("/Scripts/map.js")"></script>
+}
+

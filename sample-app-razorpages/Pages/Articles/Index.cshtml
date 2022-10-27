@@ -1,0 +1,39 @@
+﻿@page
+@model sample_app_razorpages.Pages.Articles.IndexModel
+@using sample_app_razorpages.Models
+@{
+    ViewData["Title"] = "Articles";
+    var i = 1;
+}
+
+@foreach (Article article in Model.Articles.Items)
+{
+    <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="article-tile">
+            <a asp-page="/Articles/Detail" asp-route-UrlPattern="@article.UrlPattern">
+                <img class="article-tile-image" src="@Html.DisplayFor(modelItem => article.TeaserImage.First().Url)" />
+            </a>
+            <div class="article-tile-date">
+                @Html.DisplayFor(modelItem => article.PostDate)
+            </div>
+
+            <div class="article-tile-content">
+                <h2 class="h4">
+                    <a asp-page="/Articles/Detail" asp-route-UrlPattern="@article.UrlPattern">
+                        @Html.DisplayFor(modelItem => article.Title)
+                    </a>
+                </h2>
+                <p class="article-tile-text">
+                    @Html.DisplayFor(modelItem => article.Summary)
+                </p>
+            </div>
+        </div>
+    </div>
+    @if( i % 4 == 0)
+        {
+            <div class="clear"></div>
+        }
+    i++;
+}
+
+

@@ -1,0 +1,21 @@
+﻿@model sample_app_razorpages.Models.Cafe
+<div class="col-md-6">
+    <div class="cafe-tile cursor-hand js-scroll-to-map" data-address="@Model.City, @Model.Street">
+        @if (ViewData.ContainsKey("ShowImage") && (bool)ViewData["ShowImage"] == true)
+        {
+            var photo = Model.Photo.FirstOrDefault();
+            <div class="cafe-image-tile-image-wrapper" style="background-image:url('@(photo != null ? photo.Url : "")'); background-size: cover; background-position: right center;"></div>
+            
+        }
+
+        <div class="cafe-tile-content">
+            <h3 class="cafe-tile-name">@Html.DisplayFor(vm => Model.System.Name)</h3>
+            <address class="cafe-tile-address">
+                <a href="javascript:void(0)" class="cafe-tile-address-anchor">@Html.DisplayFor(vm => Model.Street), @Html.DisplayFor(vm => Model.City)<br />@Html.DisplayFor(vm => Model.ZipCode), @Html.DisplayFor(vm => Model.Country), @Html.DisplayFor(vm => Model.State)</a>
+            </address>
+            <p class="cafe-tile-phone">
+                @await Html.PartialAsync("PhoneNumber", Model.Phone);
+            </p>
+        </div>
+    </div>
+</div>
