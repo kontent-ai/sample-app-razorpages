@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Kentico.Kontent.Delivery.Abstractions;
+using Kontent.Ai.Delivery.Abstractions;
 using kontent_sample_app_razorpages.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

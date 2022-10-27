@@ -5,8 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using kontent_sample_app_razorpages.Resolvers;
 using kontent_sample_app_razorpages.Models;
-using Kentico.Kontent.Delivery.Abstractions;
-using Kentico.Kontent.Delivery.Extensions;
+using Kontent.Ai.Delivery.Abstractions;
+using Kontent.Ai.Delivery.Extensions;
 
 namespace kontent_sample_app_razorpages
 {

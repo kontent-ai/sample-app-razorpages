@@ -21,7 +21,7 @@
             </div>
             <div class="row">
                 <div class="article-detail-content">
-                    @Html.Raw(Model.Article.BodyCopyString)
+                    @Html.DisplayFor(modelItem => Model.Article.BodyCopy)
                 </div>
             </div>
         </article>

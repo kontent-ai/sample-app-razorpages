@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Kentico.Kontent.Delivery.Abstractions;
-using Kentico.Kontent.Delivery.Urls.QueryParameters;
+using Kontent.Ai.Delivery.Abstractions;
+using Kontent.Ai.Urls.Delivery.QueryParameters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

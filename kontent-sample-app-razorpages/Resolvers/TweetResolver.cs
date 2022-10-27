@@ -1,6 +1,5 @@
-﻿using Kentico.Kontent.Delivery.Abstractions;
+﻿using Kontent.Ai.Delivery.Abstractions;
 using kontent_sample_app_razorpages.Models;
-using System.Linq;
 
 namespace kontent_sample_app_razorpages.Resolvers
 {

@@ -1,5 +1,5 @@
-﻿using Kentico.Kontent.Delivery.Abstractions;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Kontent.Ai.Delivery.Abstractions;
 
 namespace kontent_sample_app_razorpages.Resolvers
 {
