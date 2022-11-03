@@ -4,7 +4,7 @@
 
 Sample .NET Core Razor Pages project using the [Kontent.ai Delivery .NET SDK](https://github.com/kontent-ai/delivery-sdk-net) to retrieve content.
 
-This application is meant for use with the Dancing Goat sample project within Kontent.ai. The project contains the home page and article content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any administrator of a Kontent.ai subscription [can generate one](https://app.kontent.ai/sample-project-generator).
+This application is meant for use with the Dancing Goat sample project within Kontent.ai. The project contains the home page and article content for Dancing Goat – an imaginary chain of coffee shops. If you don't have your own Sample Project, any administrator of a Kontent.ai subscription [can generate one](https://app.kontent.ai/sample-site-configuration).
 
 ## Application setup
 
