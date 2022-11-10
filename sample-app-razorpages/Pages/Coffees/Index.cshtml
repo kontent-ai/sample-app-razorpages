@@ -1,0 +1,29 @@
+﻿@page
+@model sample_app_razorpages.Pages.Coffees.IndexModel
+@using sample_app_razorpages.Models
+@{
+    ViewData["Title"] = "Coffees";
+    var i = 1;
+}
+
+@foreach (Coffee coffee in Model.Coffee.Items)
+{
+    <div class="col-lg-3 col-md-6 col-sm-12">
+        <figure class="product-tile-image">
+            <a asp-page="/Coffees/Detail" asp-route-UrlPattern="@coffee.UrlPattern">
+                <img src="@Html.DisplayFor(modelItem => coffee.Image.First().Url)" />
+            </a>
+            <div class="article-tile-date">
+                @Html.DisplayFor(model => coffee.ProductName) $@Html.DisplayFor(model => coffee.Price)
+            </div>
+        </figure>
+
+    </div>
+    @if (i % 4 == 0)
+    {
+        <div class="clear"></div>
+    }
+    i++;
+}
+
+

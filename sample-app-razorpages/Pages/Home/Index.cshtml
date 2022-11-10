@@ -1,0 +1,81 @@
+﻿@page
+@model sample_app_razorpages.Pages.IndexModel
+@using sample_app_razorpages.Models
+@{
+    ViewData["Title"] = "Dancing Goat";
+}
+
+@foreach (HeroUnit item in Model.Home.Item.HeroUnit)
+{
+    <section class="banner-section" style="background-image: url('@Html.DisplayFor(modelItem => item.Image.First().Url)')">
+        <h2 class="banner-heading">@Html.DisplayFor(modelItem => item.Title)</h2>
+        <div class="banner-text">
+            @Html.DisplayFor(modelItem => item.MarketingMessage)
+        </div>
+    </section>
+    break;  //only displaying the first HeroUnit Content Item
+}
+
+
+<div class="row">
+    <h1 class="title-tab">Latest Article</h1>
+    @{var isFirstArticle = true; }
+    @foreach (Article article in Model.Home.Item.Articles)
+    {
+        @if (article != null && isFirstArticle)
+        {
+            isFirstArticle = false;
+            <div class="article-tile article-tile-large">
+                <div class="col-md-12 col-lg-6">
+                    <a class="article-tile-image" asp-page="/Articles/Detail" asp-route-UrlPattern="@article.UrlPattern">
+                        <img src="@Html.DisplayFor(modelItem => article.TeaserImage.First().Url)" class="article-tile-image" />
+                    </a>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <div class="article-tile-date">
+                        @Html.DisplayFor(modelItem => article.PostDate)
+                    </div>
+                    <div class="article-tile-content">
+                        <h2>
+                            <a asp-page="/Articles/Detail" asp-route-UrlPattern="@article.UrlPattern">
+                                @Html.DisplayFor(modelItem => article.Title)
+                            </a>
+                        </h2>
+                        <p class="article-tile-text lead-paragraph">
+                            @Html.DisplayFor(modelItem => article.Summary)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-3">
+                <div class="article-tile">
+                    <a class="article-tile-image" asp-page="/Articles/Detail" asp-route-UrlPattern="@article.UrlPattern">
+                        <img src="@Html.DisplayFor(modelItem => article.TeaserImage.First().Url)" class="article-tile-image" />
+                    </a>
+                    <div class="article-tile-date">
+                            @Html.DisplayFor(modelItem => article.PostDate)
+                    </div>
+                    <div class="article-tile-content">
+                        <h2 class="h4">
+                            <a asp-page="/Articles/Detail" asp-route-UrlPattern="@article.UrlPattern">
+                                @Html.DisplayFor(modelItem => article.Title)
+                            </a>
+                        </h2>
+                        <p class="article-tile-text">
+                            @Html.DisplayFor(modelItem => article.Summary)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+<div class="row">
+    <div class="clear center-text">
+        <a class="btn btn-more"asp-page="/Articles/Index">More Articles</a>
+    </div>
+</div>
+
